@@ -10,26 +10,6 @@
   --text: #f3f4f6;
 }
 
-/* Light theme override if attr set or system preference handled in media query */
-@media (prefers-color-scheme: light){
-  :root{
-    --bg-1: #f7fafc;
-    --bg-2: #eef2f7;
-    --card: #ffffff;
-    --accent: #1e6fbf;
-    --muted: #4b5563;
-    --text: #0b1220;
-  }
-}
-:root[data-theme="light"]{
-  --bg-1: #f7fafc;
-  --bg-2: #eef2f7;
-  --card: #ffffff;
-  --accent: #1e6fbf;
-  --muted: #4b5563;
-  --text: #0b1220;
-}
-
 *{box-sizing:border-box;margin:0;padding:0}
 body{
   font-family:'Poppins',sans-serif;
