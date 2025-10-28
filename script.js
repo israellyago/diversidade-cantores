@@ -1,14 +1,128 @@
-// script.js
-// Funcionalidades:
-// - Lazy-load dos players quando o usuário clicar "Tocar" ou quando o card ficar visível e o usuário clicar play.
-// - Botão parar por card e "Parar todos" global.
-// - Efeito fade-in/zoom com IntersectionObserver.
-// - Tema automático (prefers-color-scheme) + toggle com persistência em localStorage.
+/* script.js
+ - Integra YouTube IFrame API para players já incorporados
+ - Play All / Pause All
+ - Botão por card (toggle play/pause)
+ - Animação reveal com IntersectionObserver
+ - Tema automático / toggle (salva preferência em localStorage)
+*/
 
-document.addEventListener('DOMContentLoaded', () => {
+(() => {
+  // THEME
+  const root = document.documentElement;
+  const savedTheme = localStorage.getItem('theme'); // 'light' or 'dark'
+  function applyTheme(t) {
+    if (t === 'light') root.setAttribute('data-theme','light');
+    else root.removeAttribute('data-theme');
+  }
+  if (savedTheme) applyTheme(savedTheme);
+  // theme toggle button
+  const themeToggle = document.getElementById('themeToggle');
+  themeToggle.addEventListener('click', () => {
+    const nowLight = root.getAttribute('data-theme') === 'light';
+    const next = nowLight ? 'dark' : 'light';
+    applyTheme(next);
+    localStorage.setItem('theme', next);
+  });
+
+  // Reveal animations (fade-in/zoom)
   const cards = document.querySelectorAll('.card');
-  const stopAllBtn = document.getElementById('stop-all');
-  const toggleThemeBtn = document.getElementById('toggle-theme');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(ent => {
+      if(ent.isIntersecting) {
+        ent.target.classList.add('revealed');
+        io.unobserve(ent.target);
+      }
+    });
+  }, {threshold: 0.18});
+  cards.forEach(c => io.observe(c));
 
-  // -------- Theme handling (auto + toggle) ----------
-  const stored = localStorage.getItem('theme-preference'); // 'light' | 'dark' | null
+  // YouTube API
+  const players = []; // YT.Player objects
+  let YTReady = false;
+  const tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  document.head.appendChild(tag);
+
+  // Map card to index
+  function createPlayer(playerElemId, videoId, cardEl, onReadyCb) {
+    // will be called when API is ready
+    const p = new YT.Player(playerElemId, {
+      videoId: videoId,
+      playerVars: {
+        rel: 0,
+        modestbranding: 1,
+        controls: 1,
+        disablekb: 0
+      },
+      events: {
+        onReady: function(e) {
+          const idx = players.push(e.target) - 1;
+          cardEl.dataset.playerIndex = idx;
+          if (typeof onReadyCb === 'function') onReadyCb(e.target);
+        },
+        onStateChange: function(e) {
+          // update the per-card button icon when player state changes
+          const state = e.data; // 1 playing, 2 paused, 0 ended
+          const idx = players.indexOf(e.target);
+          if (idx >= 0) {
+            const card = document.querySelectorAll('.card')[idx];
+            if (card) {
+              const btn = card.querySelector('.card-play');
+              if (btn) {
+                if (state === 1) btn.textContent = '⏸';
+                else btn.textContent = '▶';
+              }
+            }
+          }
+        }
+      }
+    });
+    return p;
+  }
+
+  window.onYouTubeIframeAPIReady = function() {
+    YTReady = true;
+    // initialize players for all cards now (embedded immediately)
+    document.querySelectorAll('.card').forEach((card, i) => {
+      const videoId = card.dataset.videoId;
+      const playerDiv = card.querySelector('.player');
+      // ensure unique id
+      if(!playerDiv.id) playerDiv.id = `player-auto-${i+1}`;
+      createPlayer(playerDiv.id, videoId, card);
+    });
+  };
+
+  // Global controls
+  document.getElementById('playAllBtn').addEventListener('click', () => {
+    players.forEach(p => {
+      try { p.playVideo(); } catch(e) {}
+    });
+  });
+  document.getElementById('pauseAllBtn').addEventListener('click', () => {
+    players.forEach(p => {
+      try { p.pauseVideo(); } catch(e) {}
+    });
+  });
+
+  // Per-card play button (delegation)
+  document.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('card-play')) return;
+    const card = e.target.closest('.card');
+    const idx = card.dataset.playerIndex;
+    if (typeof idx === 'undefined') {
+      // player might not be ready yet
+      return;
+    }
+    const player = players[Number(idx)];
+    if (!player) return;
+    const state = player.getPlayerState();
+    if (state === 1) {
+      player.pauseVideo();
+      e.target.textContent = '▶';
+    } else {
+      player.playVideo();
+      e.target.textContent = '⏸';
+    }
+  });
+
+})();
