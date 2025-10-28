@@ -7,23 +7,6 @@
 */
 
 (() => {
-  // THEME
-  const root = document.documentElement;
-  const savedTheme = localStorage.getItem('theme'); // 'light' or 'dark'
-  function applyTheme(t) {
-    if (t === 'light') root.setAttribute('data-theme','light');
-    else root.removeAttribute('data-theme');
-  }
-  if (savedTheme) applyTheme(savedTheme);
-  // theme toggle button
-  const themeToggle = document.getElementById('themeToggle');
-  themeToggle.addEventListener('click', () => {
-    const nowLight = root.getAttribute('data-theme') === 'light';
-    const next = nowLight ? 'dark' : 'light';
-    applyTheme(next);
-    localStorage.setItem('theme', next);
-  });
-
   // Reveal animations (fade-in/zoom)
   const cards = document.querySelectorAll('.card');
   const io = new IntersectionObserver((entries) => {
