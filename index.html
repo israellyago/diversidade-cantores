@@ -1,50 +1,177 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Diversidade Musical Brasileira</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Dia da Diversidade – Cantores Brasileiros</h1>
-    <p>Um tributo à música, à cultura e à resistência.</p>
+    <div class="top-row">
+      <h1>Dia da Diversidade — Cantores</h1>
+      <div class="controls">
+        <button id="toggle-theme" title="Alternar tema">🌓</button>
+        <button id="stop-all" title="Parar todos os áudios">⏹️ Parar todos</button>
+      </div>
+    </div>
+    <p class="subtitle">Clique em ▶ para carregar e ouvir a música de cada artista. Vídeos carregam só quando você quiser (e quando rolar).</p>
   </header>
 
   <main>
-    <section class="cards">
+    <section class="cards" id="cards">
 
-      <article class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Elza_Soares.jpg" alt="Elza Soares">
-        <h2>Elza Soares</h2>
-        <p>Uma das maiores vozes do samba, símbolo de força e superação. Misturou samba, jazz e rap, tornando-se um ícone de resistência.</p>
-        <a href="https://g1.globo.com" target="_blank">Saiba mais</a>
+      <!-- Exemplo de card. Repita/adapte para cada cantor -->
+      <article class="card" data-video="https://www.youtube.com/embed/Vg1jyL3cr60?rel=0&enablejsapi=1">
+        <div class="media">
+          <img class="thumb" src="https://upload.wikimedia.org/wikipedia/commons/3/34/Elza_Soares.jpg" alt="Elza Soares">
+          <button class="play-btn" aria-label="Tocar">▶</button>
+        </div>
+        <div class="info">
+          <h2>Elza Soares</h2>
+          <p>Uma das maiores vozes do samba, símbolo de força e superação.</p>
+          <div class="card-actions">
+            <button class="play-inline">Tocar</button>
+            <button class="stop-inline">Parar</button>
+            <a class="mais" href="https://g1.globo.com" target="_blank" rel="noopener">Saiba mais</a>
+          </div>
+          <div class="player-wrap" aria-hidden="true"></div>
+        </div>
       </article>
 
-      <article class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Alcione_Marrom_2018.jpg" alt="Alcione">
-        <h2>Alcione</h2>
-        <p>A “Marrom” representa a força e a cultura popular brasileira, com sucessos eternos como <em>Não Deixe o Samba Morrer</em>.</p>
-        <a href="https://dicionariompb.com.br/artista/alcione" target="_blank">Saiba mais</a>
+      <!-- Alcione -->
+      <article class="card" data-video="https://www.youtube.com/embed/y6zJt9iWJk0?rel=0&enablejsapi=1">
+        <div class="media">
+          <img class="thumb" src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Alcione_Marrom_2018.jpg" alt="Alcione">
+          <button class="play-btn" aria-label="Tocar">▶</button>
+        </div>
+        <div class="info">
+          <h2>Alcione</h2>
+          <p>A “Marrom” representa a força e a cultura popular brasileira.</p>
+          <div class="card-actions">
+            <button class="play-inline">Tocar</button>
+            <button class="stop-inline">Parar</button>
+            <a class="mais" href="https://dicionariompb.com.br/artista/alcione" target="_blank" rel="noopener">Saiba mais</a>
+          </div>
+          <div class="player-wrap" aria-hidden="true"></div>
+        </div>
       </article>
 
-      <article class="card">
-        <img src="https://s2-g1.glbimg.com/UrLfydlEV649QF1TVn8wDEjQOlI=/0x0:1575x909/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/O/a/yvMVTDQVqx00VH65Dstw/sandradesavideo.jpg" alt="Sandra de Sá">
-        <h2>Sandra de Sá</h2>
-        <p>Rainha do Soul Brasileiro, símbolo da Black Music no país e defensora da representatividade negra.</p>
-        <a href="https://letras.mus.br" target="_blank">Saiba mais</a>
+      <!-- Sandra de Sá -->
+      <article class="card" data-video="https://www.youtube.com/embed/FlKxMtp6dVU?rel=0&enablejsapi=1">
+        <div class="media">
+          <img class="thumb" src="https://s2-g1.glbimg.com/UrLfydlEV649QF1TVn8wDEjQOlI=/0x0:1575x909/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/O/a/yvMVTDQVqx00VH65Dstw/sandradesavideo.jpg" alt="Sandra de Sá">
+          <button class="play-btn" aria-label="Tocar">▶</button>
+        </div>
+        <div class="info">
+          <h2>Sandra de Sá</h2>
+          <p>Rainha do Soul Brasileiro, símbolo da representatividade negra.</p>
+          <div class="card-actions">
+            <button class="play-inline">Tocar</button>
+            <button class="stop-inline">Parar</button>
+            <a class="mais" href="https://letras.mus.br" target="_blank" rel="noopener">Saiba mais</a>
+          </div>
+          <div class="player-wrap" aria-hidden="true"></div>
+        </div>
       </article>
 
-      <article class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Luiz_Gonzaga_1950.jpg" alt="Luiz Gonzaga">
-        <h2>Luiz Gonzaga</h2>
-        <p>O Rei do Baião, retratou o sertão e o povo nordestino com orgulho e poesia. Ícone do forró e da cultura popular.</p>
-        <a href="https://g1.globo.com" target="_blank">Saiba mais</a>
+      <!-- Luiz Gonzaga -->
+      <article class="card" data-video="https://www.youtube.com/embed/xD2dY9oX0vE?rel=0&enablejsapi=1">
+        <div class="media">
+          <img class="thumb" src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Luiz_Gonzaga_1950.jpg" alt="Luiz Gonzaga">
+          <button class="play-btn" aria-label="Tocar">▶</button>
+        </div>
+        <div class="info">
+          <h2>Luiz Gonzaga</h2>
+          <p>O Rei do Baião, retratou o sertão e o povo nordestino.</p>
+          <div class="card-actions">
+            <button class="play-inline">Tocar</button>
+            <button class="stop-inline">Parar</button>
+            <a class="mais" href="https://g1.globo.com" target="_blank" rel="noopener">Saiba mais</a>
+          </div>
+          <div class="player-wrap" aria-hidden="true"></div>
+        </div>
       </article>
 
-      <article class="card">
-        <img src="https://tenhomaisdiscosqueamigos.com/wp-content/uploads/2023/03/urias-2.jpg" alt="Urias">
-        <h2>Urias</h2>
-        <p>Artista da nova geração pop brasileira, mescla eletrônico, experimental e ativismo LGBTQIAPN+.</p>
-        <a href="https://rollingstone.uo
+      <!-- Urias -->
+      <article class="card" data-video="https://www.youtube.com/embed/Bxz7YbqlkK4?rel=0&enablejsapi=1">
+        <div class="media">
+          <img class="thumb" src="https://tenhomaisdiscosqueamigos.com/wp-content/uploads/2023/03/urias-2.jpg" alt="Urias">
+          <button class="play-btn" aria-label="Tocar">▶</button>
+        </div>
+        <div class="info">
+          <h2>Urias</h2>
+          <p>Artista pop da nova geração, estética ousada e som experimental.</p>
+          <div class="card-actions">
+            <button class="play-inline">Tocar</button>
+            <button class="stop-inline">Parar</button>
+            <a class="mais" href="https://rollingstone.uol.com.br" target="_blank" rel="noopener">Saiba mais</a>
+          </div>
+          <div class="player-wrap" aria-hidden="true"></div>
+        </div>
+      </article>
+
+      <!-- Milton Nascimento -->
+      <article class="card" data-video="https://www.youtube.com/embed/dqEoYtMhnxA?rel=0&enablejsapi=1">
+        <div class="media">
+          <img class="thumb" src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Milton_Nascimento_2014.jpg" alt="Milton Nascimento">
+          <button class="play-btn" aria-label="Tocar">▶</button>
+        </div>
+        <div class="info">
+          <h2>Milton Nascimento</h2>
+          <p>Bituca — voz e composição que marcaram gerações.</p>
+          <div class="card-actions">
+            <button class="play-inline">Tocar</button>
+            <button class="stop-inline">Parar</button>
+            <a class="mais" href="https://dicionariompb.com.br/artista/milton-nascimento" target="_blank" rel="noopener">Saiba mais</a>
+          </div>
+          <div class="player-wrap" aria-hidden="true"></div>
+        </div>
+      </article>
+
+      <!-- Iza -->
+      <article class="card" data-video="https://www.youtube.com/embed/bIhTQkOdf1w?rel=0&enablejsapi=1">
+        <div class="media">
+          <img class="thumb" src="https://revistaquem.globo.com/famoso/iza/foto/iza.jpg" alt="Iza">
+          <button class="play-btn" aria-label="Tocar">▶</button>
+        </div>
+        <div class="info">
+          <h2>Iza</h2>
+          <p>Voz poderosa, símbolo de empoderamento e representatividade.</p>
+          <div class="card-actions">
+            <button class="play-inline">Tocar</button>
+            <button class="stop-inline">Parar</button>
+            <a class="mais" href="https://ebiografia.com/iza_legion" target="_blank" rel="noopener">Saiba mais</a>
+          </div>
+          <div class="player-wrap" aria-hidden="true"></div>
+        </div>
+      </article>
+
+      <!-- Emicida -->
+      <article class="card" data-video="https://www.youtube.com/embed/_8zQYH3FZ9s?rel=0&enablejsapi=1">
+        <div class="media">
+          <img class="thumb" src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Emicida_no_Festival_do_Futuro_2018.jpg" alt="Emicida">
+          <button class="play-btn" aria-label="Tocar">▶</button>
+        </div>
+        <div class="info">
+          <h2>Emicida</h2>
+          <p>Rapper que levou a voz da periferia ao mundo com sofisticação.</p>
+          <div class="card-actions">
+            <button class="play-inline">Tocar</button>
+            <button class="stop-inline">Parar</button>
+            <a class="mais" href="https://dicionariompb.com.br/artista/emicida" target="_blank" rel="noopener">Saiba mais</a>
+          </div>
+          <div class="player-wrap" aria-hidden="true"></div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Trabalho desenvolvido por Israell – Sistemas de Informação | 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
