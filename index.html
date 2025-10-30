@@ -1,135 +1,194 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Diversidade Musical Brasileira</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dia da Diversidade — Cantores Brasileiros</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="header-inner">
-      <div>
-        <h1>Dia da Diversidade — Cantores Brasileiros</h1>
-        <p class="subtitle">Um tributo à voz, à cultura e à resistência.</p>
-      </div>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Dia da Diversidade</h1>
+      <h1>Cantores Brasileiros</h1>
+      <p>Um tributo à voz, à cultura e à resistência.</p>
+      <button id="scrollButton">Conhecer os Cantores</button>
     </div>
   </header>
 
-  <main>
-    <section class="cards">
-
-      <!-- ELZA SOARES -->
-      <article class="card" data-video-id="Vg1jyL3cr60">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Elza_Soares.jpg" alt="Elza Soares">
-        <div class="card-body">
-          <h2>Elza Soares</h2>
-          <p>Nasceu em 1930 no Rio de Janeiro; superou adversidades e se tornou uma das maiores vozes do samba — visceral, original e política. Uma voz de resistência.</p>
-          <div class="player-row">
-            <div class="player" id="player-elza"></div>
-            <button class="card-play">▶</button>
-          </div>
+  <main id="cantores">
+    <h2>Nossos Artistas</h2>
+    <section class="cards-container">
+      <div class="card">
+        <img src="http://nosmulheresdaperiferia.com.br/wp-content/uploads/2022/01/Elza-Soares-2-1-800x640.jpg" alt="Elza Soares">
+        <h3>Elza Soares</h3>
+        <audio controls class="audio-player">
+          <source src="Musicas/Elza Soares - Maria da Vila Matilde.mp3" type="audio/mpeg">
+        </audio>
+        <p>
+          Elza Soares nasceu em 1930, no Rio de Janeiro. 
+          Superou pobreza, casou-se jovem e começou a cantar para sustentar os filhos. 
+          Tornou-se uma das maiores vozes do samba, conhecida por sua força e por misturar ritmos como jazz e rap. 
+          Enfrentou perdas, preconceito e violência, mas reinventou-se com discos marcantes como A Mulher do Fim do Mundo. 
+          Morreu em 2022, deixando um legado de resistência e orgulho para a música brasileira.
+          <p>Fonte: G1 – Elza Soares: a mulher que cantou até o fim. 
+            Disponível em: <a href= "https://share.google/b1LYSpoh6uyyq2rmQ" target="_blank">https://share.google/b1LYSpoh6uyyq2rmQ</a></p>
+        </p>
+      </div>
+      <div class="card">
+        <img src="https://dicionariompb.com.br/wp-content/uploads/2021/04/Alcione-1.jpeg" alt="Alcione">
+        <h3>Alcione</h3>
+        <audio controls class="audio-player">
+          <source src="Musicas/Alcione - Você me vira a cabeça (me tira do sério).mp3" type="audio/mpeg">
+        </audio>
+        <p>
+          Alcione Nazareth, a “Marrom”, é uma das maiores cantoras e compositoras do Brasil. 
+          Nascida em São Luís do Maranhão, iniciou-se na música ainda jovem e ganhou destaque ao vencer o programa “A Grande Chance”. 
+          Em 1975 lançou o disco “A Voz do Samba”, com sucessos como “Não deixe o samba morrer”. 
+          Ao longo da carreira, recebeu inúmeros prêmios e homenagens, incluindo o musical “Marrom” (2022), o Prêmio da Música Brasileira (2023) e o enredo da Mangueira (2024). 
+          Sua trajetória representa força, representatividade e valorização da cultura popular brasileira.
+           
+          <p>Fonte: ALCIONE. Alcione — Dicionário Cravo Albin: MPB.
+            Disponível em: <a href= "https://dicionariompb.com.br/artista/alcione/." target="_blank">https://dicionariompb.com.br/artista/alcione/.</a></p>
+        </p>
+      </div>
+        <div class="card">
+        <img src="https://conteudo.imguol.com.br/c/entretenimento/af/2023/05/12/sandra-de-sa-1683919279730_v2_900x506.jpg.webp" alt="Sandra-Sá">
+        <h3>Sandra Sá</h3>
+        <audio controls class="audio-player">
+          <source src="Musicas/Sandra De Sá - Olhos Coloridos (Ao Vivo).mp3" type="audio/mpeg">
+        </audio>
+        <p>
+          Sandra de Sá nasceu em 1955, no Rio de Janeiro, e é conhecida como a Rainha do Soul Brasileiro. 
+          Influenciada pelo Black Rio e pela música negra, construiu carreira sólida na MPB e no soul, lançando sucessos como Demônio Colorido e Bye Bye Tristeza, e colaborando com diversos artistas. 
+          É referência na música brasileira e na luta por representatividade.
+          <p>Fonte: Letras.mus.br – Biografia de Sandra de Sá, a rainha do soul brasileiro.
+            Disponível em: <a href= "https://share.google/f9qKw3UzaoD93ILlp" target="_blank">https://share.google/f9qKw3UzaoD93ILlp</a></p>
+          </p>
+      </div>
+        <div class="card">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKHaJdEfeRi_Orqd812UDo4U03vckNJiZZiAHCNS6eRnxhHV_p1H9pVyNeZ2RRpz9JOcT3oUIFIhLEG6MDFOfvuglO8a9yN5UeuPix7qHX-yq6DorM_QsUPYx5EvxneEVPsmtfS91GtCs/w640-h458/Luiz+Gonzaga.jpg" alt="Luiz-Gonzaga">
+        <h3>Luiz Gonzaga</h3>
+        <audio controls class="audio-player">
+          <source src="Musicas/Luiz Gonzaga - Asa Branca (Áudio Oficial).mp3" type="audio/mpeg">
+        </audio>
+        <p>
+          Luiz Gonzaga nasceu em 1912, em Exu (PE), e ficou conhecido como o Rei do Baião. 
+          Usou sua música para retratar a vida e a cultura do sertão nordestino, valorizando o povo e a natureza da região. 
+          Suas canções, como Asa Branca e Assum Preto, tornaram-se símbolos do Nordeste. 
+          Morreu em 1989, deixando um legado imenso para a música brasileira.
+          <p>Fonte: G1 – Luiz Gonzaga como você nunca viu! 
+            Disponível em: <a href= "https://share.google/0R9s4ibjRTyF1La8V" target="_blank">https://share.google/0R9s4ibjRTyF1La8V</a>
+          </p>
+        </p>
+      </div>
+      </div>
+        <div class="card">
+        <img src="https://i0.wp.com/agitopop.com.br/wp-content/uploads/2023/06/Urias.jpg?w=800&ssl=1" alt="Urias">
+        <h3>Urias</h3>
+        <audio controls class="audio-player">
+          <source src="Musicas/Urias, Major RD - Voz do Brasil.mp3" type="audio/mpeg">
+        </audio>
+        <p>
+          Lorena Urias Martins da Silva, conhecida profissionalmente apenas como Urias,é uma cantora, compositora, dançarina, modelo e performer brasileira. 
+          Ela se destacou como uma das vozes mais originais e ousadas da nova geração da música pop nacional, conquistando reconhecimento tanto no Brasil quanto no exterior com sua estética única e sonoridade experimental. 
+          Sua música é uma fusão de pop, eletrônico,industrial e elementos de música brasileira, criando um som dark e cativante. 
+          Suas performances ao vivo são conhecidas pela intensidade, coreografia precisa e uma forte carga teatral. 
+          Urias se consolidou como um ícone cultural para a geração Z e para a comunidade LGBTQIAPN+ no Brasil. 
+          Sua obra não é apenas entretenimento, mas um manifesto sobre autoaceitação, quebra de tabus e a liberdade de expressão. 
+          Ela representa uma nova leva de artistas brasileiros que pensam globalmente e criam sem concessões,pavimendo o caminho para uma nova era do pop brasileiro.
+          Fonte: Resenhas críticas em veículos como Rolling Stone Brasil, Omelete e G1 Música.
+        </p>
+      </div>
+         </div>
+        <div class="card">
+        <img src="https://dicionariompb.com.br/wp-content/uploads/2021/04/116096421_3691127527582652_6051391570210629779_n.jpg" alt="Milton-Nascimento">
+        <h3>Milton Nascimento</h3>
+        <audio controls class="audio-player">
+          <source src="Musicas/Milton Nascimento - Quem Sabe Isso Quer Dizer Amor.mp3" type="audio/mpeg">
+        </audio>
+        <p>
+          Milton Nascimento, conhecido carinhosamente como Bituca,é amplamente considerado uma das vozes mais importantes e influentes da música popular brasileira e mundial. 
+          Sua carreira, marcada por uma voz única de timbre inconfundível e grande alcance, e por composições que fundem MPB, jazz, rock e música sacra,é um capítulo fundamental da cultura brasileira. 
+          Sua obra é marcada por temas como amizade, infância, fé, paisagens mineiras e espiritualidade. 
+          Em 2022, Milton anunciou sua aposentadoria dos palcos, encerrando uma das trajetórias mais gloriosas da música, após uma turnê de despedida.
+          [Fontes: Comunicado oficial reproduzido por G1, Folha de S.Paulo].Legado: Milton Nascimento é uma instituição cultural. Sua voz e sua composição são um patrimônio do Brasil, tendo influenciado incontáveis artistas e continuando a tocar gerações. 
+          Ele é a própria voz das montanhas de Minas Gerais projetada para o mundo.
+        </p>
+      </div>
+         </div>
+        <div class="card">
+        <img src="https://s2-quem.glbimg.com/JQLcDUA6n_uP3yeuYIUM1rHOq60=/fit-in/750x415/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2023/l/o/1nj1JjRsyYWq1TgapDrA/iza.jpg" alt="Iza">
+        <h3>Iza</h3>
+        <audio controls class="audio-player">
+          <source src="Musicas/IZA - Pesadão.mp3" type="audio/mpeg">
+        </audio>
+        <p>
+          IZA é cantora, apresentadora e publicitária carioca. 
+          Filha de uma professora de música e de um militar, começou a cantar no coral da igreja e formou-se em Publicidade antes de seguir a carreira musical. 
+          Em 2016 assinou com a Warner e, em 2017, alcançou sucesso com o hit “Pesadão”, em parceria com Marcelo Falcão. 
+          Seu primeiro álbum, “Dona de Mim”, foi lançado em 2018. Em 2019, tornou-se jurada do The Voice Brasil e rainha de bateria da Imperatriz Leopoldinense. 
+          Também estreou como atriz no filme Um Ano Inesquecível. 
+          Em 2023 lançou o álbum “AFRODHIT”, e em 2024 estreou seu bloco de Carnaval, Bonde Pesadão, em São Paulo. Entre seus principais sucessos estão “Dona de Mim”, “Pesadão”, “Brisa”, “Ginga”, “Gueto” e “Fé”.
+          <p>IZA. Iza – eBiografia / eBiografia.com. Disponível em: <a href= "https://www.ebiografia.com/iza_legion/." target="_blank">https://www.ebiografia.com/iza_legion/.</a></p>
+        </p>
+      </div>
         </div>
-      </article>
-
-      <!-- ALCIONE -->
-      <article class="card" data-video-id="y6zJt9iWJk0">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Alcione_Marrom_2018.jpg" alt="Alcione">
-        <div class="card-body">
-          <h2>Alcione</h2>
-          <p>Alcione Nazareth, a "Marrom". Poderosa voz do samba e da MPB, referência de representatividade e tradição.</p>
-          <div class="player-row">
-            <div class="player" id="player-alcione"></div>
-            <button class="card-play">▶</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- SANDRA DE SÁ -->
-      <article class="card" data-video-id="FlKxMtp6dVU">
-        <img src="https://s2-g1.glbimg.com/UrLfydlEV649QF1TVn8wDEjQOlI=/0x0:1575x909/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/O/a/yvMVTDQVqx00VH65Dstw/sandradesavideo.jpg" alt="Sandra de Sá">
-        <div class="card-body">
-          <h2>Sandra de Sá</h2>
-          <p>Rainha do soul brasileiro. Carreira marcada pela representatividade e pela fusão entre black music e MPB.</p>
-          <div class="player-row">
-            <div class="player" id="player-sandra"></div>
-            <button class="card-play">▶</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- LUIZ GONZAGA -->
-      <article class="card" data-video-id="xD2dY9oX0vE">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Luiz_Gonzaga_1950.jpg" alt="Luiz Gonzaga">
-        <div class="card-body">
-          <h2>Luiz Gonzaga</h2>
-          <p>O Rei do Baião. Sua música é a bandeira do Nordeste: "Asa Branca", saudade e sertão.</p>
-          <div class="player-row">
-            <div class="player" id="player-gonzaga"></div>
-            <button class="card-play">▶</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- URIAS -->
-      <article class="card" data-video-id="Bxz7YbqlkK4">
-        <img src="https://tenhomaisdiscosqueamigos.com/wp-content/uploads/2023/03/urias-2.jpg" alt="Urias">
-        <div class="card-body">
-          <h2>Urias</h2>
-          <p>Artista da nova geração: pop experimental, estética forte e ativismo LGBTQIA+. Som atual e provocador.</p>
-          <div class="player-row">
-            <div class="player" id="player-urias"></div>
-            <button class="card-play">▶</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- MILTON NASCIMENTO -->
-      <article class="card" data-video-id="dqEoYtMhnxA">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Milton_Nascimento_2014.jpg" alt="Milton Nascimento">
-        <div class="card-body">
-          <h2>Milton Nascimento</h2>
-          <p>Bituca: voz de timbre único, peças que unem MPB, jazz e espiritualidade — patrimônio da música brasileira.</p>
-          <div class="player-row">
-            <div class="player" id="player-milton"></div>
-            <button class="card-play">▶</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- IZA -->
-      <article class="card" data-video-id="bIhTQkOdf1w">
-        <img src="https://revistaquem.globo.com/famoso/iza/foto/iza.jpg" alt="Iza">
-        <div class="card-body">
-          <h2>Iza</h2>
-          <p>Voz poderosa, presença de palco e representatividade — cantora e personalidade importante da cena atual.</p>
-          <div class="player-row">
-            <div class="player" id="player-iza"></div>
-            <button class="card-play">▶</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- EMICIDA -->
-      <article class="card" data-video-id="_8zQYH3FZ9s">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Emicida_no_Festival_do_Futuro_2018.jpg" alt="Emicida">
-        <div class="card-body">
-          <h2>Emicida</h2>
-          <p>Rapper, produtor e voz da periferia — técnica apurada, letras fortes e muito impacto cultural.</p>
-          <div class="player-row">
-            <div class="player" id="player-emicida"></div>
-            <button class="card-play">▶</button>
-          </div>
-        </div>
-      </article>
-
+        <div class="card">
+        <img src="https://dicionariompb.com.br/wp-content/uploads/2021/04/emicida.jpeg" alt="Emicida">
+        <h3>Emicida</h3>
+        <audio controls class="audio-player">
+          <source src="Musicas/Emicida - Levanta e anda.mp3" type="audio/mpeg">
+        </audio>
+        <p>
+        Leandro Roque de Oliveira, mundialmente conhecido como Emicida,é um rapper, cantor, compositor, produtor, empreendedor e apresentador brasileiro. 
+        Reconhecido por sua habilidade técnica excepcional com as palavras e por sua visão estratégica, ele transcendeu o título de "batalha de rap" para se tornar uma das vozes mais importantes e influentes de sua geração.
+        Emicida não é apenas um rapper de sucesso; ele é um arquiteto cultural. 
+        Sua trajetória demonstra como é possível manter a autenticidade e o conteúdo das ruas enquanto se constrói (uma carreira sólida, respeitada e inovadora). 
+        Ele abriu portas para uma nova geração de artistas e mostrou o poder de narrar o Brasil a partir da perspectiva da periferia, com sofisticação, orgulho e uma qualidade técnica e produtiva inquestionáveis. 
+        Ele é, sem dúvida, um dos principais nomes na ponte entre a cultura de rua e o mainstream no século XXI.
+        Fonte: "Batalha do Santa Cruz - A Origem"
+        </p>
+      </div>
+      
     </section>
   </main>
 
-  <footer>
-    <p>Trabalho desenvolvido por Israell — Sistemas de Informação | 2025</p>
+  <script>
+    document.getElementById("scrollButton").addEventListener("click", function() {
+      document.getElementById("cantores").scrollIntoView({ behavior: "smooth" });
+    });
+  </script>
+
+  <footer class="credits-section">
+    <h2>Créditos</h2>
+    <div class="credits-container">
+      <div class="column">
+        <h3>Discentes Responsáveis</h3>
+        <ul>
+          <li></li>
+          <li></li>
+          <li>Israell Yago Silva Vitória</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-column">
+        <h4>Universidade Estadual de Goiás</h4>
+        <p>Promovendo educação de qualidade e valorizando a diversidade brasileira</p>
+      </div>
+      <div class="footer-column">
+        <h4>Links Úteis</h4>
+        <ul>
+          <li><a href="https://www.ueg.br/">Portal UEG</a></li>
+          <li><a href="#">Início</a></li>
+        </ul>
+      </div>
+    </div>
   </footer>
 
-  <script src="script.js" defer></script>
+
 </body>
 </html>
